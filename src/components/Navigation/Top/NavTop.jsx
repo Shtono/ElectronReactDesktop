@@ -1,6 +1,9 @@
-import { Stack, Button, Typography } from '@mui/material'
-import { NavLink } from 'react-router-dom'
 import React from 'react'
+import { Stack, Typography } from '@mui/material'
+import { NavLink } from 'react-router-dom'
+import Clock from './widgets/Clock/Clock'
+import WifiSignal from './widgets/WifiSignal/WifiSignal'
+import ConnectedControllers from './widgets/ConnectedControllers/ConnectedControllers'
 
 const styles = {
   root: {
@@ -21,6 +24,11 @@ const linkStyles = {
   },
 }
 
+const connectedControllersMock = [
+  { name: '1', id: 1 },
+  { name: '2', id: 1 },
+]
+
 const NavLinkComponent = (props) => {
   const { to, name } = props
   return (
@@ -35,7 +43,7 @@ const NavLinkComponent = (props) => {
 const NavLinkWrapper = (props) => {
   const { components } = props
   return (
-    <Stack>
+    <Stack spacing={2} direction="row">
       {components.map((component) => (
         <NavLinkComponent to={component.to} name={component.name} key={component.name} />
       ))}
@@ -47,6 +55,11 @@ const { root } = styles
 const NavTop = () => {
   return (
     <Stack sx={root} direction="row" spacing={2}>
+      <Stack direction="row" alignItems="center" spacing={2}>
+        <Clock />
+        <WifiSignal />
+      </Stack>
+      <ConnectedControllers connectedControllers={connectedControllersMock} />
       <NavLinkWrapper
         components={[
           { to: '/', name: 'Home' },
