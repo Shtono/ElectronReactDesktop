@@ -1,9 +1,7 @@
-import React from 'react'
 import { Stack, ThemeProvider } from '@mui/material'
 import NavTop from './components/Navigation/Top/NavTop'
 import WarzoneBg from './assets/bg/bg_warzone.jpg'
-import './index.css'
-import theme from './ui/MuiTheme/theme.ts'
+import theme from './ui/MuiTheme/theme'
 
 const fs = window.require('fs')
 const path = window.require('path-browserify')

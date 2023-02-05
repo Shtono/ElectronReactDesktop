@@ -14,7 +14,6 @@ function createWindow() {
     },
   })
 
-  // and load the index.html of the app.
   win
     .loadURL('http://localhost:3000')
     .then(() => console.log('Loaded...'))
@@ -43,5 +42,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-console.log('All ran')
