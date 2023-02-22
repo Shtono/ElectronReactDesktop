@@ -1,4 +1,3 @@
-import ProfileIronMan from '/assets/user/user_profile_iron.png'
 import { SxProps } from '@mui/material'
 
 const innerContainer: SxProps = {
