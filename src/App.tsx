@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Stack justifyContent="space-between" sx={styles}>
+        <Stack color="#fff" justifyContent="space-between" sx={styles}>
           <NavTop />
         </Stack>
       </ThemeProvider>
