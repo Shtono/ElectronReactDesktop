@@ -1,3 +1,2 @@
 Under development...
-run yarn 
-run yarn electron:serve
+yarn && yarn electron:serve
