@@ -4,21 +4,14 @@ import Wifi1BarIcon from '@mui/icons-material/Wifi1Bar'
 import Wifi2BarIcon from '@mui/icons-material/Wifi2Bar'
 import { Box, Typography } from '@mui/material'
 
-const wifiIcons = [
-  <Wifi1BarIcon />,
-  <Wifi2BarIcon />,
-  <WifiIcon />,
-  <Typography color="white" variant="subtitle2">
-    Fix me...
-  </Typography>,
-]
+const wifiIcons = [<Wifi1BarIcon />, <Wifi2BarIcon />, <WifiIcon />]
 
 const WifiSignal = () => {
   const [displayWifiIcon, setDisplayWifiIcon] = useState(0)
   useEffect(() => {
     const interval = setInterval(() => {
       setDisplayWifiIcon((prevState) => {
-        if (prevState > 3) {
+        if (prevState >= wifiIcons.length - 1) {
           return 0
         }
         return prevState + 1
@@ -26,11 +19,7 @@ const WifiSignal = () => {
     }, 500)
     return () => clearInterval(interval)
   }, [])
-  return (
-    <Box width={100} color="white">
-      {wifiIcons[displayWifiIcon]}
-    </Box>
-  )
+  return <Box color="white">{wifiIcons[displayWifiIcon]}</Box>
 }
 
 export default WifiSignal
